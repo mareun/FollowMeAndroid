@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_signup_act">
+
+    <!--toolbar-->
+    <RelativeLayout
+        android:id="@+id/rl_set_bar_sign_up_act"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/signup_signup"
+            android:textColor="#707070"
+            android:textSize="18sp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/rl_set_bar_sign_up_act"
+        android:background="#cecece" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginTop="86dp"
+        android:orientation="vertical">
+
+        <!-- 아이디(이메일) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/et_id_sign_up_act"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:background="@null"
+                    android:hint="@string/id_signup"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="#cecece"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/btn_id_check_sign_id_set_act"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/id_check_signup"
+                    android:textColor="#ffc233"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!--패스워드-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="12dp">
+
+            <EditText
+                android:id="@+id/et_pw_sign_up_act"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:background="@null"
+                android:hint="@string/password_signup"
+                android:inputType="textPassword"
+                android:textColorHint="#cecece"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <!--패스워드 확인-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="12dp">
+
+            <EditText
+                android:id="@+id/et_pw_check_sign_up_act"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:background="@null"
+                android:hint="패스워드 확인"
+                android:inputType="textPassword"
+                android:textColorHint="#cecece"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <!--닉네임-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="12dp">
+
+            <EditText
+                android:id="@+id/et_nickname_sign_up_act"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:background="@null"
+                android:hint="@string/nickname_signup"
+                android:textColorHint="#cecece"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <!--성별 RadioBtn-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_weight="0dp">
+
+            <RadioGroup
+                android:id="@+id/rg_sign_up_act"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_man_sign_up_act"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/sex_man_signup" />
+
+                <RadioButton
+                    android:id="@+id/rb_woman_sign_up_act"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/sex_woman_signup" />
+
+            </RadioGroup>
+
+
+        </RelativeLayout>
+
+        <!--전화번호-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="12dp">
+
+            <EditText
+                android:id="@+id/et_phonenumber_sign_up_act"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:background="@null"
+                android:hint="@string/phone_signup"
+                android:inputType="phone"
+                android:textColorHint="#cecece"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <!--생년월일-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="12dp">
+
+            <EditText
+                android:id="@+id/et_birth_sign_up_act"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:background="@null"
+                android:hint="@string/birth_signup"
+                android:inputType="datetime"
+                android:textColorHint="#cecece"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/btn_agree_sign_id_set_act"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="#e2e2e2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/btn_sign_signup"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

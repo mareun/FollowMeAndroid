@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">FollowMe</string>
+
+
+    //loginAct_string
+    <string name="login_login">로그인</string>
+    <string name="look_around_login">둘러보기</string>
+
+
+    //signupAct_string
+    <string name="signup_signup">회원가입</string>
+    <string name="id_signup">아이디(이메일)</string>
+    <string name="id_check_signup">중복확인</string>
+    <string name="password_signup">패스워드(영문,숫자,특수문자 조합 8자 이상)</string>
+    <string name="nickname_signup">닉네임</string>
+    <string name="sex_man_signup">남</string>
+    <string name="sex_woman_signup">여</string>
+    <string name="phone_signup">전화번호</string>
+    <string name="birth_signup">생년월일</string>
+    <string name="btn_sign_signup">가입하기</string>
+
+
+</resources>
+

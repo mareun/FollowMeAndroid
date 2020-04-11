@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".ui.LoginActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_login_act"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <!--follow me-->
+        <TextView
+            android:id="@+id/tv_title_login_act"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="56dp"
+            android:text="@string/app_name"
+            android:textColor="@color/colorYellow"
+            android:textSize="48dp" />
+
+        <!--editText-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title_login_act"
+            android:layout_marginHorizontal="48dp"
+            android:layout_marginTop="56dp"
+            android:orientation="vertical">
+
+            <!--아이디-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/et_id_login_act"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:background="@null"
+                    android:hint="@string/id_signup"
+                    android:inputType="textShortMessage"
+                    android:textColorHint="#cecece"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <!--패스워드-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="16dp">
+
+                <EditText
+                    android:id="@+id/et_pw_login_act"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:background="@null"
+                    android:hint="@string/password_signup"
+                    android:inputType="textPassword"
+                    android:textColorHint="#cecece"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <!--로그인-->
+            <RelativeLayout
+                android:id="@+id/btn_login_act"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/login_login"
+                    android:textColor="@color/colorYellow"
+                    android:textSize="17sp" />
+
+            </RelativeLayout>
+
+            <!--둘러보기-->
+            <RelativeLayout
+                android:id="@+id/btn_look_login_act"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/look_around_login"
+                    android:textColor="@color/colorYellow"
+                    android:textSize="17sp" />
+
+            </RelativeLayout>
+
+            <!--회원가입-->
+            <TextView
+                android:id="@+id/btn_signup_login_act"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="1sp"
+                android:text="@string/signup_signup"
+                android:textColor="@color/colorYellow"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
