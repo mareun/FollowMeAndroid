@@ -3,12 +3,27 @@ package com.ghdev.followme.ui
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import com.ghdev.followme.R
+import com.ghdev.followme.data.PostSignUpResponse
+import com.ghdev.followme.network.ApplicationController
+import com.ghdev.followme.network.NetworkService
+import com.google.gson.JsonObject
+import com.google.gson.JsonParser
 import kotlinx.android.synthetic.main.activity_sign_up.*
+import org.jetbrains.anko.toast
+import org.json.JSONObject
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class SignUpActivity : AppCompatActivity(),  View.OnClickListener {
+class SignUpActivity : AppCompatActivity(), View.OnClickListener {
+
+    val networkService: NetworkService by lazy {
+        ApplicationController.instance.networkService
+    }
 
     override fun onClick(v: View?) {
 
@@ -35,6 +50,8 @@ class SignUpActivity : AppCompatActivity(),  View.OnClickListener {
                 val type = "type"
                 val pushAllow = "true"
 
+
+                getSignUpResponse()
             }
 
         }
@@ -56,10 +73,46 @@ class SignUpActivity : AppCompatActivity(),  View.OnClickListener {
     }
 
 
-
-    private fun downKeyboard(view : View) {
-        val imm: InputMethodManager = applicationContext!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    private fun downKeyboard(view: View) {
+        val imm: InputMethodManager =
+            applicationContext!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(view.windowToken, 0)
+    }
+
+    //network
+    private fun getSignUpResponse() {
+        //editText값
+        val input_email: String = et_id_sign_up_act.text.toString()
+        val input_pw: String = et_pw_sign_up_act.text.toString()
+        val input_nickname: String = et_nickname_sign_up_act.text.toString()
+
+        var jsonObject = JSONObject()
+        jsonObject.put("email", input_email)
+        jsonObject.put("password", input_pw)
+        jsonObject.put("nickname", input_nickname)
+
+        val gsonObject = JsonParser().parse(jsonObject.toString()) as JsonObject
+
+        val postSignUpResponse: Call<PostSignUpResponse> =
+            networkService.postSignUpResponse("application/json", gsonObject)
+        postSignUpResponse.enqueue(object : Callback<PostSignUpResponse> {
+            override fun onFailure(call: Call<PostSignUpResponse>, t: Throwable) {
+                Log.e("sign up fail", t.toString())
+            }
+
+            //통신 성공 시 수행되는 메소드
+            override fun onResponse(
+                call: Call<PostSignUpResponse>,
+                response: Response<PostSignUpResponse>
+            ) {
+                if (response.isSuccessful) {
+                    toast(response.body()!!.message)
+                    finish()
+                }
+            }
+        })
+
+
     }
 
 }

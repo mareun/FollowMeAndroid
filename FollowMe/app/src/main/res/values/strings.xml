@@ -4,11 +4,13 @@
 
     //loginAct_string
     <string name="login_login">로그인</string>
-    <string name="look_around_login">둘러보기</string>
+    <string name="look_around_login"><u>둘러보기</u></string>
 
 
     //signupAct_string
-    <string name="signup_signup">회원가입</string>
+    <string name="signup_signup"><u>회원가입</u></string>
+    <string name="find_password_signup"><u>비밀번호를 잊어버렸어요.</u></string>
+
     <string name="id_signup">아이디(이메일)</string>
     <string name="id_check_signup">중복확인</string>
     <string name="password_signup">패스워드(영문,숫자,특수문자 조합 8자 이상)</string>
