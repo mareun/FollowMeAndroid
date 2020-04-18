@@ -1,4 +1,4 @@
-package com.ghdev.followme.network
+package com.ghdev.followme.repo
 
 import android.app.Application
 import retrofit2.Retrofit

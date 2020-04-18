@@ -8,8 +8,8 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import com.ghdev.followme.R
 import com.ghdev.followme.data.PostSignUpResponse
-import com.ghdev.followme.network.ApplicationController
-import com.ghdev.followme.network.NetworkService
+import com.ghdev.followme.repo.ApplicationController
+import com.ghdev.followme.repo.NetworkService
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import kotlinx.android.synthetic.main.activity_sign_up.*
@@ -28,11 +28,11 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
 
         when (v) {
-            //중복확인 버튼
+           /* //중복확인 버튼
             btn_id_check_sign_id_set_act -> {
                 //##
 
-            }
+            }*/
 
             //키보드 내리기
             rl_signup_act -> {
@@ -66,7 +66,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun init() {
 
-        btn_id_check_sign_id_set_act.setOnClickListener(this)
+        //btn_id_check_sign_id_set_act.setOnClickListener(this)
         rl_signup_act.setOnClickListener(this)
         btn_agree_sign_id_set_act.setOnClickListener(this)
 

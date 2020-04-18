@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:id="@+id/tablayout_navi">
+
+
+    <ImageView
+        android:id="@+id/img_home_main_navi_act"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/img_search_main_navi_act"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_home_black"/>
+
+
+    <ImageView
+        android:id="@+id/img_search_main_navi_act"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        app:layout_constraintEnd_toStartOf="@id/img_course_main_navi_act"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_home_main_navi_act"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_home_black"
+        />
+
+    <ImageView
+        android:id="@+id/img_course_main_navi_act"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        app:layout_constraintEnd_toStartOf="@id/img_course_recommend_main_navi_act"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_search_main_navi_act"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_home_black" />
+
+    <ImageView
+        android:id="@+id/img_course_recommend_main_navi_act"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        app:layout_constraintEnd_toStartOf="@id/img_mypage_main_navi_act"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_course_main_navi_act"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_home_black"/>
+
+    <ImageView
+        android:id="@+id/img_mypage_main_navi_act"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_course_recommend_main_navi_act"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_home_black"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
