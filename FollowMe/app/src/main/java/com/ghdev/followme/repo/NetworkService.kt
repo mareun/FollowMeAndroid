@@ -1,4 +1,4 @@
-package com.ghdev.followme.network
+package com.ghdev.followme.repo
 
 import com.ghdev.followme.data.PostSignUpResponse
 import com.google.gson.JsonObject
