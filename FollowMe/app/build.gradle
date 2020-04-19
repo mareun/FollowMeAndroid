@@ -9,8 +9,8 @@ android {
 
     defaultConfig {
         applicationId "com.ghdev.followme"
-        minSdkVersion 28 //23
-        targetSdkVersion 29 //28
+        minSdkVersion 23 //23
+        targetSdkVersion 28 //28
         versionCode 1
         versionName "1.0"
 
