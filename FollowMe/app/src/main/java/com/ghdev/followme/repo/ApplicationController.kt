@@ -25,4 +25,14 @@ class ApplicationController : Application() {
         ).build()
         networkService = retrofit . create (NetworkService::class.java)
     }
+
+    override fun onTerminate() {
+        super.onTerminate()
+        //instance = null
+    }
+
+    fun getGlobalApplicationContext() : ApplicationController{
+        checkNotNull(instance) { "this application does not inherit com.kakao.GlobalApplication" }
+        return instance!!
+    }
 }
