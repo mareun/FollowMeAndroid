@@ -1,5 +1,6 @@
 package com.ghdev.followme.repo
 
+import com.ghdev.followme.data.PostLoginResponse
 import com.ghdev.followme.data.PostSignUpResponse
 import com.google.gson.JsonObject
 import retrofit2.Call
@@ -15,5 +16,14 @@ interface NetworkService {
         @Header("Content-Type") content_type : String,
         @Body() body : JsonObject
     ) : Call<PostSignUpResponse>
+
+    //로그인
+    @POST("/auth/login")
+    fun postLoginResponse(
+        @Header("Content-Type") content_type: String,
+        @Body() body : JsonObject
+    ) :Call<PostLoginResponse>
+
+
 
 }
