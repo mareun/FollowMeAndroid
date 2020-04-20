@@ -1,6 +1,7 @@
 package com.ghdev.followme.repo
 
 import android.app.Application
+import com.kakao.auth.KakaoSDK
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -17,6 +18,7 @@ class ApplicationController : Application() {
         super.onCreate()
         instance = this
         buildNetWork()
+        KakaoSDK.init(KakaoSDKAdapter())
     }
 
     fun buildNetWork() {

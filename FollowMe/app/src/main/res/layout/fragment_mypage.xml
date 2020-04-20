@@ -6,9 +6,33 @@
     tools:context=".ui.mypage.MypageFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <View
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="mypagefragment" />
+        android:layout_height="49dp"
+        android:layout_marginTop="24dp"
+        android:background="#ffffff"/>
+    <TextView
+        android:layout_width="115dp"
+        android:layout_height="30dp"
+        android:text="마이페이지"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="33dp"
+        android:textStyle="bold"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="71dp"
+        android:background="#ff6f61"/>
+
+
+    <LinearLayout
+        android:layout_width="391dp"
+        android:layout_height="132dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="83dp"
+        android:layout_marginRight="10dp"
+        android:background="#ffffff" />
 
 </FrameLayout>

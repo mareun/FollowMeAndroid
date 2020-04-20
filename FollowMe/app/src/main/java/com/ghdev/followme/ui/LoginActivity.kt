@@ -88,8 +88,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             val md = MessageDigest.getInstance("SHA")
             for (signature in signatures) {
                 md.update(signature.toByteArray())
-                Log.d("HashKey", Base64.encodeToString(md.digest(), NO_WRAP))
-                //Log.d("HashKey", Base64.encodeToString(md.digest(), Base64.DEFAULT))
+                //val str = String( Base64.encode(md.digest(), NO_WRAP))
+                //Log.d("HashKey", str)
+                Log.d("HashKey", Base64.encodeToString(md.digest(), Base64.DEFAULT))
             }
         }
         catch (e: PackageManager.NameNotFoundException) {
