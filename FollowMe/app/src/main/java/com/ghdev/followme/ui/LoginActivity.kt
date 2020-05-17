@@ -1,47 +1,34 @@
 package com.ghdev.followme.ui
 
 import android.content.Context
-import android.content.Intent
-import android.content.pm.PackageInstaller
-import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Base64
-import android.util.Base64.NO_WRAP
-import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.ghdev.followme.R
 import com.ghdev.followme.data.PostLoginResponse
+import com.ghdev.followme.databinding.ActivityLoginBinding
 import com.ghdev.followme.repo.ApplicationController
 import com.ghdev.followme.repo.NetworkService
-import com.google.gson.JsonObject
-import com.google.gson.JsonParser
-import com.kakao.auth.ISessionCallback
-import com.kakao.auth.Session
-import com.kakao.network.ErrorResult
-import com.kakao.usermgmt.UserManagement
-import com.kakao.usermgmt.callback.MeV2ResponseCallback
-import com.kakao.usermgmt.response.MeV2Response
-import com.kakao.util.exception.KakaoException
-import com.kakao.util.helper.Utility.getPackageInfo
+import com.ghdev.followme.viewmodel.LoginViewModel
+import com.ghdev.followme.viewmodel.LoginViewModelFactory
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
-import org.json.JSONObject
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.security.MessageDigest
-import java.security.NoSuchAlgorithmException
 
-class LoginActivity : AppCompatActivity(), View.OnClickListener {
+class LoginActivity : AppCompatActivity(), View.OnClickListener, LoginListener {
+
 
     val networkService: NetworkService by lazy {
         ApplicationController.instance.networkService
     }
 
-    private var callback : SessionCallback = SessionCallback()
+
+    //private var callback : SessionCallback = SessionCallback()
 
     override fun onClick(v: View?) {
         when(v) {
@@ -63,9 +50,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             //로그인하기
-            btn_login_act -> {
+           /* btn_login_act -> {
                 getLoginResponse()
-            }
+            }*/
 
 
         }
@@ -75,11 +62,46 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        //val factory = LoginViewModelFactory(PostLoginResponse())
+
+        //viewmodel 불러오기
+        val activityLoginBinding = DataBindingUtil.setContentView<ActivityLoginBinding>(this, R.layout.activity_login)
+        val activityLoginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        activityLoginBinding.loginviewmodel = activityLoginViewModel
+        //ViewModelProviders는 deprecated되었다. -> ViewModelProvider하고 ViewModelStoreOwner을 호출한다.
+
+
+
         init()
-        getHashKey(this) //해시키값 구하기
-        Session.getCurrentSession().addCallback(callback) //콜백 추가 정의
+        //getHashKey(this) //해시키값 구하기
+        //Session.getCurrentSession().addCallback(callback) //콜백 추가 정의
     }
 
+    private fun init() {
+
+        btn_look_login_act.setOnClickListener(this)
+        btn_signup_login_act.setOnClickListener(this)
+        rl_login_act.setOnClickListener(this)
+        btn_login_act.setOnClickListener(this)
+    }
+
+
+    private fun downKeyboard(view : View) {
+        val imm: InputMethodManager = applicationContext!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
+    }
+
+    override fun onSuccess(loginResponse: LiveData<String>) {
+        loginResponse.observe(this, Observer {
+            toast(it)
+        })
+    }
+
+    override fun onFailure(message: String) {
+        toast(message)
+    }
+
+    /*
     //해시키 구하기
     private fun getHashKey(context: Context) {
         try {
@@ -99,6 +121,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             e.printStackTrace()
         }
     }
+
+
+
 
     //콜백 추가 정의
     //세션 콜백 삭제
@@ -144,22 +169,12 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun init() {
-
-        btn_look_login_act.setOnClickListener(this)
-        btn_signup_login_act.setOnClickListener(this)
-        rl_login_act.setOnClickListener(this)
-        btn_login_act.setOnClickListener(this)
-    }
 
 
-    private fun downKeyboard(view : View) {
-        val imm: InputMethodManager = applicationContext!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(view.windowToken, 0)
-    }
+    */
 
     //로그인 통신
-    private fun getLoginResponse(){
+    /*private fun getLoginResponse(){
         val input_email: String = et_id_login_act.text.toString()
         val input_pw: String = et_pw_login_act.text.toString()
 
@@ -188,7 +203,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             }
         })
 
-    }
+    }*/
+
 
 
 }
