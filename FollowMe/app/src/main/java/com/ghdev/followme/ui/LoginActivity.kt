@@ -62,7 +62,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, LoginListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        //val factory = LoginViewModelFactory(PostLoginResponse())
+
 
         //viewmodel 불러오기
         val activityLoginBinding = DataBindingUtil.setContentView<ActivityLoginBinding>(this, R.layout.activity_login)
