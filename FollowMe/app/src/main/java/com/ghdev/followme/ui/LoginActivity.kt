@@ -1,8 +1,10 @@
 package com.ghdev.followme.ui
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.databinding.DataBindingUtil
@@ -16,11 +18,24 @@ import com.ghdev.followme.repo.ApplicationController
 import com.ghdev.followme.repo.NetworkService
 import com.ghdev.followme.viewmodel.LoginViewModel
 import com.ghdev.followme.viewmodel.LoginViewModelFactory
+import com.google.gson.JsonObject
+import com.google.gson.JsonParser
+import com.kakao.auth.ISessionCallback
+import com.kakao.auth.Session
+import com.kakao.network.ErrorResult
+import com.kakao.usermgmt.UserManagement
+import com.kakao.usermgmt.callback.MeV2ResponseCallback
+import com.kakao.usermgmt.response.MeV2Response
+import com.kakao.util.exception.KakaoException
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
+import org.json.JSONObject
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class LoginActivity : AppCompatActivity(), View.OnClickListener, LoginListener {
+class LoginActivity : AppCompatActivity(), View.OnClickListener{
 
 
     val networkService: NetworkService by lazy {
@@ -28,7 +43,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, LoginListener {
     }
 
 
-    //private var callback : SessionCallback = SessionCallback()
+    private var callback : SessionCallback = SessionCallback()
 
     override fun onClick(v: View?) {
         when(v) {
@@ -50,9 +65,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, LoginListener {
             }
 
             //로그인하기
-           /* btn_login_act -> {
+            btn_login_act -> {
                 getLoginResponse()
-            }*/
+            }
 
 
         }
@@ -62,19 +77,17 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, LoginListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-
-
+        /*
         //viewmodel 불러오기
         val activityLoginBinding = DataBindingUtil.setContentView<ActivityLoginBinding>(this, R.layout.activity_login)
         val activityLoginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
         activityLoginBinding.loginviewmodel = activityLoginViewModel
         //ViewModelProviders는 deprecated되었다. -> ViewModelProvider하고 ViewModelStoreOwner을 호출한다.
-
-
+         */
 
         init()
         //getHashKey(this) //해시키값 구하기
-        //Session.getCurrentSession().addCallback(callback) //콜백 추가 정의
+        Session.getCurrentSession().addCallback(callback) //콜백 추가 정의
     }
 
     private fun init() {
@@ -91,7 +104,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, LoginListener {
         imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
-    override fun onSuccess(loginResponse: LiveData<String>) {
+    /*override fun onSuccess(loginResponse: LiveData<String>) {
         loginResponse.observe(this, Observer {
             toast(it)
         })
@@ -99,7 +112,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, LoginListener {
 
     override fun onFailure(message: String) {
         toast(message)
-    }
+    }*/
 
     /*
     //해시키 구하기
@@ -121,7 +134,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, LoginListener {
             e.printStackTrace()
         }
     }
-
+*/
 
 
 
@@ -140,7 +153,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, LoginListener {
         super.onActivityResult(requestCode, resultCode, data)
     }
 
-    private class SessionCallback : ISessionCallback{
+    private class SessionCallback : ISessionCallback {
         //로그인 실패한 상태
         override fun onSessionOpenFailed(exception: KakaoException?) {
             Log.e("Session Call back", exception?.message)
@@ -171,10 +184,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, LoginListener {
 
 
 
-    */
 
     //로그인 통신
-    /*private fun getLoginResponse(){
+    private fun getLoginResponse(){
         val input_email: String = et_id_login_act.text.toString()
         val input_pw: String = et_pw_login_act.text.toString()
 
@@ -203,7 +215,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, LoginListener {
             }
         })
 
-    }*/
+    }
 
 
 
