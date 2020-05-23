@@ -199,6 +199,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener{
         val postLoginResponse: Call<PostLoginResponse> =
             networkService.postLoginResponse("application/json", gsonObject)
         postLoginResponse.enqueue(object : Callback<PostLoginResponse> {
+
+            //통신 실패 시 수행되는 메소드
             override fun onFailure(call: Call<PostLoginResponse>, t: Throwable) {
                 Log.e("login fail", t.toString())
             }
@@ -209,6 +211,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener{
                 response: Response<PostLoginResponse>
             ) {
                 if (response.isSuccessful) {
+
                     toast(response.body()!!.message)
                     finish()
                 }

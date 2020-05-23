@@ -12,5 +12,6 @@ import java.util.*
 class LoginViewModelFactory(private val listener: PostLoginResponse) : ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return LoginViewModel(listener) as T
+        //Unchecked cast: LoginViewModel to T 경고문 살펴보기~
     }
 }
