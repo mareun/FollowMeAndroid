@@ -6,7 +6,9 @@ import android.content.SharedPreferences
 //SharedPreference 에서 쓰기/읽기를 관리하는 클래스
 class PreferenceHelper(context: Context) {
 
-    val PREFS_FILENAME = "token_data"
+    companion object {
+        private const val PREFS_FILENAME = "token_data"
+    }
 
     private val prefs: SharedPreferences = context.getSharedPreferences(PREFS_FILENAME, Context.MODE_PRIVATE)
 

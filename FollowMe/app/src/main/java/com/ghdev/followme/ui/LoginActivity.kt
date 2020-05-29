@@ -38,10 +38,13 @@ import retrofit2.Response
 class LoginActivity : AppCompatActivity(), View.OnClickListener{
 
 
-    val networkService: NetworkService by lazy {
+    private val networkService: NetworkService by lazy {
         ApplicationController.instance.networkService
     }
 
+    private val sharedPrefs by lazy{
+        ApplicationController.prefs
+    }
 
     private var callback : SessionCallback = SessionCallback()
 
@@ -211,12 +214,16 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener{
                 response: Response<PostLoginResponse>
             ) {
                 if (response.isSuccessful) {
-
+                    //response.body()!!.accessToken
                     toast(response.body()!!.message)
                     finish()
                 }
             }
         })
+
+    }
+
+    private fun saveSharedPrefs() {
 
     }
 

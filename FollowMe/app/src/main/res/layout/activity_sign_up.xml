@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     android:id="@+id/rl_signup_act">
 
     <!--toolbar-->
@@ -36,6 +38,10 @@
         android:layout_below="@+id/rl_set_bar_sign_up_act"
         android:background="#cecece" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,12 +54,18 @@
             android:layout_height="wrap_content"
             android:text="이메일"
             android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
             />
 
         <!-- 아이디(이메일) -->
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="42dp"
+            android:layout_height="42dp">
+
+        <LinearLayout
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
             android:background="@drawable/login_edittext_round_box">
 
                 <EditText
@@ -69,14 +81,38 @@
                     android:textSize="13sp"
                     />
 
-
         </LinearLayout>
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:text="인증하기"
+            android:background="@drawable/signup_button_box"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:textStyle = "bold"
+            android:layout_marginStart="230dp"
+            android:layout_marginTop = "3dp"/>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="비밀번호"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            />
 
         <!--패스워드-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="42dp"
-            android:layout_marginTop="12dp">
+            android:layout_marginTop="3dp"
+            android:background="@drawable/login_edittext_round_box">
 
             <EditText
                 android:id="@+id/et_pw_sign_up_act"
@@ -92,11 +128,21 @@
 
         </RelativeLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호 확인"
+            android:textSize="12sp"
+            android:layout_marginTop="28dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            />
+
         <!--패스워드 확인-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="42dp"
-            android:layout_marginTop="12dp">
+            android:background="@drawable/login_edittext_round_box">
 
             <EditText
                 android:id="@+id/et_pw_check_sign_up_act"
@@ -112,11 +158,21 @@
 
         </RelativeLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nickname_signup"
+            android:textSize="12sp"
+            android:layout_marginTop="28dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            />
+
         <!--닉네임-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="42dp"
-            android:layout_marginTop="12dp">
+            android:background="@drawable/login_edittext_round_box">
 
             <EditText
                 android:id="@+id/et_nickname_sign_up_act"
@@ -130,6 +186,17 @@
                 android:textSize="13sp" />
 
         </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="성별"
+            android:textSize="12sp"
+            android:layout_marginTop="28dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            />
 
         <!--성별 RadioBtn-->
         <RelativeLayout
@@ -150,25 +217,44 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/sex_man_signup" />
+                    android:text="@string/sex_man_signup"
+                    android:textColor="#000000"
+                    android:checked="true"/>
 
                 <RadioButton
                     android:id="@+id/rb_woman_sign_up_act"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#000000"
                     android:text="@string/sex_woman_signup" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:text="@string/sex_null_signup"/>
 
             </RadioGroup>
 
-
         </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="휴대전화"
+            android:textSize="12sp"
+            android:layout_marginTop="28dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            />
 
         <!--전화번호-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="42dp"
-            android:layout_marginTop="12dp">
+            android:background="@drawable/login_edittext_round_box">
 
             <EditText
                 android:id="@+id/et_phonenumber_sign_up_act"
@@ -184,42 +270,60 @@
 
         </RelativeLayout>
 
-        <!--생년월일-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_marginTop="12dp">
-
-            <EditText
-                android:id="@+id/et_birth_sign_up_act"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="16dp"
-                android:background="@null"
-                android:hint="@string/birth_signup"
-                android:inputType="datetime"
-                android:textColorHint="#cecece"
-                android:textSize="14sp" />
-
-        </RelativeLayout>
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/btn_agree_sign_id_set_act"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_alignParentBottom="true"
-        android:background="#e2e2e2">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/btn_sign_signup"
-            android:textSize="18sp" />
+            android:text="생년월일일"
+           android:textSize="12sp"
+            android:layout_marginTop="28dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            />
 
-    </RelativeLayout>
+        <!--생년월일-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/sp_birth_year_sign_up_act"
+                android:layout_width="106dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                />
+            <Spinner
+                android:id="@+id/sp_birth_month_sign_up_act"
+                android:layout_width="79dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                />
+            <Spinner
+                android:id="@+id/sp_birth_day_sign_up_act"
+                android:layout_width="79dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_agree_sign_id_set_act"
+            android:layout_width="301dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="38dp"
+            android:layout_gravity="center"
+            android:text="@string/btn_sign_signup"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:background="@drawable/signup_button_box"/>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
+
 
 </RelativeLayout>
