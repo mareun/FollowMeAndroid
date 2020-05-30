@@ -54,12 +54,14 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener{
             //둘러보기 버튼
             btn_look_login_act -> {
                 //ApplicationData.loginState = false
+                startActivity<MainActivity>()
 
             }
 
             //회원가입하기
             btn_signup_login_act -> {
                 startActivity<SignUpActivity>()
+
             }
 
             //키보드 다운
