@@ -13,4 +13,7 @@
     <color name="colorGrayLogin">#4c000000</color>
     <color name="textColor">#666666</color>
     <color name="colorMain">#ff6f61</color>
+
+    <!--회원가입-->
+    <color name ="pinkcolor">#ff6f61</color>
 </resources>

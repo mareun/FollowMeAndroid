@@ -11,13 +11,14 @@
     <string name="signup_signup"><u>회원가입</u></string>
     <string name="find_password_signup"><u>비밀번호를 잊어버렸어요.</u></string>
 
-    <string name="id_signup">아이디(이메일)</string>
+    <string name="id_signup">이메일주소를 입력해주세요</string>
     <string name="id_check_signup">중복확인</string>
     <string name="password_signup">패스워드(영문,숫자,특수문자 조합 8자 이상)</string>
     <string name="nickname_signup">닉네임</string>
     <string name="sex_man_signup">남</string>
     <string name="sex_woman_signup">여</string>
-    <string name="phone_signup">전화번호</string>
+    <string name="sex_null_signup">선택안함</string>
+    <string name="phone_signup">-제외하고 입력</string>
     <string name="birth_signup">생년월일</string>
     <string name="btn_sign_signup">가입하기</string>
 
@@ -26,6 +27,21 @@
     <string name="title_mycours">나의코스</string>
     <string name="like_mycourse">내가 찜한 코스</string>
 
+    //mypage_string
+    <string name="sign_mypage">로그인 및 회원가입</string>
+    <string name="sign_text_mypage">로그인 하시고 나만의 코스를 만들어 보세요</string>
+    <string name="my_pick_place_mypage">내가 찜한 장소</string>
+    <string name="my_setting_mypage">내 계정 관리</string>
+    <string name="note_mypage">공지사항</string>
+    <string name="version_mypage">버전</string>
+    <string name="about_request_mypage">앱 문의/건의하기</string>
+    <string name="question_mypage">자주 묻는 질문</string>
+
+    //mypage_mysetting_string
+    <string name="myset_title">내 계정 관리</string>
+    <string name="myset_change_info">회원 정보 변경</string>
+    <string name="myset_change_pw">비밀번호 변경</string>
+    <string name="myset_change_dt">회원탈퇴</string>
 
 </resources>
 

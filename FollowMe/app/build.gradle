@@ -5,12 +5,12 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
 
     defaultConfig {
         applicationId "com.ghdev.followme"
-        minSdkVersion 23 //23
-        targetSdkVersion 28 //28
+        minSdkVersion 28 //23
+        targetSdkVersion 29 //28
         versionCode 1
         versionName "1.0"
 
@@ -50,7 +50,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:1.1.0"
     implementation "androidx.core:core-ktx:$rootProject.ktx_version"
     implementation "androidx.viewpager2:viewpager2:$rootProject.viewpager2_version"
-
+    implementation "androidx.appcompat:appcompat:1.1.0"
     //navigation?
     implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.navigation_version"
     implementation "androidx.navigation:navigation-ui-ktx:$rootProject.navigation_version"
@@ -90,6 +90,11 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.8.1'
     implementation 'com.squareup.retrofit2:converter-gson:2.8.1'
 
+    //OkHttp3
+    implementation 'com.squareup.okhttp3:okhttp:4.0.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.0.0'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:4.0.0'
+
 
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
@@ -98,5 +103,7 @@ dependencies {
     //카카오 로그인
     implementation group: 'com.kakao.sdk', name: 'usermgmt', version: '1.27.0'
 
+    //databinding
+    kapt "com.android.databinding:compiler:3.1.1"
 
 }
