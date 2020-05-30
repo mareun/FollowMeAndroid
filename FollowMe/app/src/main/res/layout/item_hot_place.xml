@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cl_hot_place_container"
+    android:layout_width="150dp"
+    android:layout_height="200dp"
+    android:layout_marginEnd="16dp"
+    android:background="@drawable/login_edittext_round_box"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img_hot_place_item"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorBlack"
+        />
+
+    <TextView
+        android:id="@+id/tv_place_name_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_hot_place_item"
+        android:layout_marginTop="8dp"
+        android:textSize="14sp"
+        android:text="카페 포제"
+        />
+
+    <TextView
+        android:id="@+id/tv_place_address_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_place_name_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="4dp"
+        android:textSize="12sp"
+        android:text="서울 성동구 연무장9길 7"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
