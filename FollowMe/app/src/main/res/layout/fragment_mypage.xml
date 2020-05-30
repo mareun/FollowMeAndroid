@@ -31,8 +31,9 @@
         android:layout_marginLeft="9dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="15dp"
-        android:background="#ffffff"
-        android:orientation="vertical">
+        android:background="@drawable/mypage_radius"
+        android:orientation="vertical"
+        >
 
 
         <LinearLayout
@@ -137,35 +138,117 @@
     
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="184dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="9dp"
-        android:background="#ffffff"
+        android:background="@drawable/mypage_radius"
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/rl_mypage_notice"
+            android:id="@+id/btn_mypage_notice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
             >
             <TextView
                 android:id="@+id/view_mypage_notice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="공지사항"
+                android:text="@string/note_mypage"
                 android:textSize="14sp"
-                android:textColor="#000000"/>
+                android:textColor="#000000" />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_convers_mypage"
-                android:layout_toRightOf="@id/view_mypage_notice"/>
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"/>
         </RelativeLayout>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#4c000000"
+            android:background="#4c000000"/>
+
+        <RelativeLayout
+            android:id="@+id/btn_mypage_version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            >
+            <TextView
+                android:id="@+id/view_mypage_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/version_mypage"
+                android:textSize="14sp"
+                android:textColor="#000000" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_convers_mypage"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"/>
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#4c000000"/>
+
+        <RelativeLayout
+            android:id="@+id/btn_mypage_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            >
+            <TextView
+                android:id="@+id/view_mypage_request"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/about_request_mypage"
+                android:textSize="14sp"
+                android:textColor="#000000" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_convers_mypage"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_mypage_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            >
+            <TextView
+                android:id="@+id/view_mypage_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/question_mypage"
+                android:textSize="14sp"
+                android:textColor="#000000" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_convers_mypage"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"/>
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#4c000000"/>
+
 
 
 
