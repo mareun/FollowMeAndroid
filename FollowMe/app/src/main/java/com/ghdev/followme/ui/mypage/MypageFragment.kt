@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.ghdev.followme.R
+import kotlinx.android.synthetic.main.fragment_mypage.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,7 +19,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [MypageFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MypageFragment : Fragment() {
+class MypageFragment : Fragment(), View.OnClickListener {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -57,5 +58,13 @@ class MypageFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onClick(v: View?) {
+        when(v){
+            btn_sign_mypage -> {
+                //로그인 activity
+            }
+        }
     }
 }

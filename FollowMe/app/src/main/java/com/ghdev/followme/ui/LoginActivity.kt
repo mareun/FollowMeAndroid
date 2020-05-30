@@ -55,6 +55,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener{
             btn_look_login_act -> {
                 //ApplicationData.loginState = false
                 startActivity<MainActivity>()
+                //finish()
 
             }
 
