@@ -1,10 +1,13 @@
 package com.ghdev.followme.ui.mypage
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 
 import com.ghdev.followme.R
 import kotlinx.android.synthetic.main.fragment_mypage.*
@@ -19,7 +22,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [MypageFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MypageFragment : Fragment(), View.OnClickListener {
+class MypageFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -30,6 +33,7 @@ class MypageFragment : Fragment(), View.OnClickListener {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
 
     override fun onCreateView(
@@ -60,11 +64,5 @@ class MypageFragment : Fragment(), View.OnClickListener {
             }
     }
 
-    override fun onClick(v: View?) {
-        when(v){
-            btn_sign_mypage -> {
-                //로그인 activity
-            }
-        }
-    }
+
 }

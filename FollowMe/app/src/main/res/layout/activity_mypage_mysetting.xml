@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.mypage.MypageMysetting"
+    android:background="#ffffff">
+
+    <TextView
+        android:id="@+id/myset_title_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/myset_title"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="11dp"
+        android:layout_marginLeft="11dp"/>
+
+    <View
+        android:id="@+id/myset_title_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:layout_constraintTop_toBottomOf="@id/myset_title_view"
+        android:layout_marginTop="10dp"
+        android:background="#ff6f61"/>
+
+    <LinearLayout
+        android:id="@+id/ll_myset_change_info"
+        app:layout_constraintTop_toBottomOf="@id/myset_title_line"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="23dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/myset_change_info"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            />
+
+        <LinearLayout
+            app:layout_constraintTop_toBottomOf="@id/ll_myset_change_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:id="@+id/btn_myset_change_pw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/myset_change_pw"
+                android:textColor="#80000000"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/btn_myset_leave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/myset_change_dt"
+                android:textColor="#80000000"
+                android:textSize="14sp"
+                android:layout_marginTop="13dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

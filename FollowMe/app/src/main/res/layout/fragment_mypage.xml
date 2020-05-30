@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:orientation="vertical"
-            android:background="#ffffff"
+            android:background="@drawable/mypage_radius"
             android:clickable="true">
         
         <LinearLayout
@@ -80,12 +80,14 @@
             android:background="#4c000000"
             android:layout_marginLeft="11dp"
             android:layout_marginRight="11dp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="63dp"
             android:orientation="horizontal"
             android:weightSum="2"
             >
+
             <LinearLayout
                 android:id="@+id/btn_my_pick_mypage"
                 android:layout_width="0dp"
@@ -222,6 +224,12 @@
                 android:layout_marginRight="10dp"/>
         </RelativeLayout>
 
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#4c000000"/>
+
         <RelativeLayout
             android:id="@+id/btn_mypage_question"
             android:layout_width="match_parent"
@@ -244,19 +252,14 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"/>
         </RelativeLayout>
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#4c000000"/>
-
-
-
-
-
-
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btn_gogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUTTON"/>
 
 
 

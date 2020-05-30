@@ -26,14 +26,20 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     //mypage_string
-    <string name ="sign_mypage">로그인 및 회원가입</string>
+    <string name="sign_mypage">로그인 및 회원가입</string>
     <string name="sign_text_mypage">로그인 하시고 나만의 코스를 만들어 보세요</string>
-    <string name = "my_pick_place_mypage">내가 찜한 장소</string>
+    <string name="my_pick_place_mypage">내가 찜한 장소</string>
     <string name="my_setting_mypage">내 계정 관리</string>
     <string name="note_mypage">공지사항</string>
     <string name="version_mypage">버전</string>
     <string name="about_request_mypage">앱 문의/건의하기</string>
     <string name="question_mypage">자주 묻는 질문</string>
+
+    //mypage_mysetting_string
+    <string name="myset_title">내 계정 관리</string>
+    <string name="myset_change_info">회원 정보 변경</string>
+    <string name="myset_change_pw">비밀번호 변경</string>
+    <string name="myset_change_dt">회원탈퇴</string>
 
 </resources>
 
