@@ -5,57 +5,84 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.ghdev.followme.R
+import com.ghdev.followme.data.test.CourseData
+import com.ghdev.followme.data.test.Place
+import com.ghdev.followme.data.test.PlaceInfo
+import kotlinx.android.synthetic.main.fragment_home.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    lateinit var hotPlaceRecyclerViewAdapter: HotPlaceRecyclerViewAdapter
+    lateinit var courseRecyclerViewAdapter: CourseRecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
+
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
+
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        setRecyclerView()
     }
+
+    private fun setRecyclerView() {
+
+        //핫플
+        //데이터는 서버에서 받을 것
+        //모듈화를 시키기(rv_id와 datalist가 들어가는 것 말고는 다른 것은 동일)
+        var dataList: ArrayList<PlaceInfo> = ArrayList()
+
+        dataList.add(PlaceInfo("", "하", "서울시 노원구 공릉동 131313"))
+        dataList.add(PlaceInfo("", "하", "서울시 노원구 공릉동 131313"))
+        dataList.add(PlaceInfo("", "하", "서울시 노원구 공릉동 131313"))
+        dataList.add(PlaceInfo("", "하", "서울시 노원구 공릉동 131313"))
+
+        hotPlaceRecyclerViewAdapter = HotPlaceRecyclerViewAdapter(dataList)
+        rv_hot_place_home.adapter = hotPlaceRecyclerViewAdapter
+        rv_hot_place_home.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+
+
+        //맛집
+        var restaurantList : ArrayList<PlaceInfo> = ArrayList()
+
+        restaurantList.add(PlaceInfo("dk", "맛집", "서울시 노원구 공릉동 131313"))
+        restaurantList.add(PlaceInfo("dk", "맛집", "서울시 노원구 공릉동 131313"))
+        restaurantList.add(PlaceInfo("dk", "맛집", "서울시 노원구 공릉동 131313"))
+        restaurantList.add(PlaceInfo("dk", "맛집", "서울시 노원구 공릉동 131313"))
+
+        hotPlaceRecyclerViewAdapter = HotPlaceRecyclerViewAdapter(restaurantList)
+        rv_restaurant_today.adapter = hotPlaceRecyclerViewAdapter
+        rv_restaurant_today.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+
+
+        //코스로 따라와
+        var courseDataList : ArrayList<CourseData> = ArrayList()
+
+        var place : ArrayList<Place>  = ArrayList()
+        place.add(Place("갬성"))
+        place.add(Place("소울커피"))
+        place.add(Place("공차"))
+
+        courseDataList.add(CourseData("2020.01.04", 5, place,"나만의 힙한 장소"))
+        courseDataList.add(CourseData("2020.01.04", 3, place,"나만의 힙한 장소"))
+        courseDataList.add(CourseData("2020.01.04", 2, place, "나만의 힙한 장소"))
+        courseDataList.add(CourseData("2020.01.04", 1, place, "나만의 힙한 장소"))
+
+        courseRecyclerViewAdapter = CourseRecyclerViewAdapter(courseDataList)
+        rv_follow_course.adapter = courseRecyclerViewAdapter
+        rv_follow_course.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+
+    }
+
 }

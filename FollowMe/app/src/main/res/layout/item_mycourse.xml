@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/cl_mycourse_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="195dp"
+    android:layout_marginBottom="16dp"
+    android:background="@drawable/login_edittext_round_box"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_item_mycourse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_date_mycourse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical"
+            android:text="2020.04.12(월)"
+            />
+
+        <RatingBar
+            android:id="@+id/rb_star_mycourse_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="16dp"
+            style="?android:attr/ratingBarStyleSmall"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_course"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginVertical="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_title_mycourse"
+        app:layout_constraintTop_toBottomOf="@+id/cl_item_mycourse"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="131dp">
+
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ellipse_3"
+            app:layout_constraintEnd_toStartOf="@+id/img2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_place1_mycourse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오카에리"
+            android:textSize="10sp"
+            app:layout_constraintTop_toTopOf="@+id/img1"
+            app:layout_constraintBottom_toBottomOf="@+id/img1"
+            app:layout_constraintLeft_toLeftOf="@+id/img1"
+            app:layout_constraintRight_toRightOf="@+id/img1"/>
+
+        <ImageView
+            android:id="@+id/img2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ellipse_3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/img3"
+            app:layout_constraintStart_toEndOf="@+id/img1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_place2_mycourse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오카에리"
+            android:textSize="10sp"
+            app:layout_constraintTop_toTopOf="@+id/img2"
+            app:layout_constraintBottom_toBottomOf="@+id/img2"
+            app:layout_constraintLeft_toLeftOf="@+id/img2"
+            app:layout_constraintRight_toRightOf="@+id/img2"/>
+
+
+        <ImageView
+            android:id="@+id/img3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ellipse_3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_place3_mycourse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오카에리"
+            android:textSize="10sp"
+            app:layout_constraintTop_toTopOf="@+id/img3"
+            app:layout_constraintBottom_toBottomOf="@+id/img3"
+            app:layout_constraintLeft_toLeftOf="@+id/img3"
+            app:layout_constraintRight_toRightOf="@+id/img3"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_title_mycourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="16dp"
+        android:text="나만의 홍대 투어"
+        android:textColor="@color/colorBlack"
+        android:textSize="12sp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

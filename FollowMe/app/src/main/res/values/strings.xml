@@ -21,8 +21,10 @@
     <string name="birth_signup">생년월일</string>
     <string name="btn_sign_signup">가입하기</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //fragment_mycourse
+    <string name="title_mycours">나의코스</string>
+    <string name="like_mycourse">내가 찜한 코스</string>
 
 
 </resources>
