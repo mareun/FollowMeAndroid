@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import com.ghdev.followme.R
 import com.ghdev.followme.data.PostSignUpResponse
 import com.ghdev.followme.repo.ApplicationController
@@ -75,6 +77,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
         rl_signup_act.setOnClickListener(this)
         btn_agree_sign_id_set_act.setOnClickListener(this)
 
+
     }
 
 
@@ -118,17 +121,6 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
         })
     }
 
-    private fun SpinnerArray(){
-
-       /* val cal = Calendar.getInstance()
-        val year = cal.get(Calendar.YEAR).toString()
-        //val month = cal.get(Calendar.MONTH+1).toString()
-        //val date = cal.get(Calendar.DATE).toString()
-
-        //현재 년도 - 14 ~ 현재 년도 - 89
-        for(i in year.toInt()-89 until year.toInt()-14){
-            year_arr.add()
-        }*/
     }
 
-}
+
