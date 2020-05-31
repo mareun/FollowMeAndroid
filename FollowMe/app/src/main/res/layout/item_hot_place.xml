@@ -23,6 +23,7 @@
         />
 
     <ImageView
+        android:id="@+id/btn_mypick_editmode_unchecked"
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:src="@drawable/mypick_unchecked"
@@ -67,6 +68,15 @@
         android:text="서울 성동구 연무장9길 7"
         />
 
+    <ImageView
+        android:id="@+id/cl_hot_place_container_checked"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:background="@drawable/mypick_checked_item"
+        app:layout_constraintStart_toStartOf="@id/cl_hot_place_container"
+        app:layout_constraintTop_toTopOf="@id/cl_hot_place_container"
+        app:layout_constraintEnd_toEndOf="@id/cl_hot_place_container"
+        android:visibility="gone"/>
 
 
 
