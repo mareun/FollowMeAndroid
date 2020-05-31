@@ -289,11 +289,12 @@
             android:layout_height="42dp"
             android:orientation="horizontal">
 
-            <Spinner
+            <DatePicker
                 android:id="@+id/sp_birth_year_sign_up_act"
                 android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="16dp"
+                android:datePickerMode="spinner"
                 />
             <Spinner
                 android:id="@+id/sp_birth_month_sign_up_act"

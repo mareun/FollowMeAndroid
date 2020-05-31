@@ -18,8 +18,13 @@ import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class SignUpActivity : AppCompatActivity(), View.OnClickListener {
+
+    var year_arr = ArrayList<String>()
+    var month_arr = ArrayList<String>()
+    var date_arr = ArrayList<String>()
 
     val networkService: NetworkService by lazy {
         ApplicationController.instance.networkService
@@ -111,8 +116,19 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
         })
+    }
 
+    private fun SpinnerArray(){
 
+       /* val cal = Calendar.getInstance()
+        val year = cal.get(Calendar.YEAR).toString()
+        //val month = cal.get(Calendar.MONTH+1).toString()
+        //val date = cal.get(Calendar.DATE).toString()
+
+        //현재 년도 - 14 ~ 현재 년도 - 89
+        for(i in year.toInt()-89 until year.toInt()-14){
+            year_arr.add()
+        }*/
     }
 
 }
