@@ -2,6 +2,7 @@ package com.ghdev.followme.ui.mypage
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +15,21 @@ import kotlinx.android.synthetic.main.item_hot_place.*
 import org.jetbrains.anko.verticalLayout
 
 class MypageMypickActivity : AppCompatActivity(), View.OnClickListener{
+
+    override fun onClick(v: View?) {
+        when(v){
+            //editmode 전환
+            btn_mypick_editmode -> {
+                Log.d("btn_mypick: ", "안녕??")
+                //체크박스와 휴지통이미지 visibility
+                btn_mypick_editmode_delete.visibility = View.VISIBLE
+                btn_mypick_editmode_unchecked.visibility = View.VISIBLE
+
+            }
+
+        }
+
+    }
 
     lateinit var hotPlaceRecyclerViewAdapter: HotPlaceRecyclerViewAdapter
 
@@ -41,18 +57,10 @@ class MypageMypickActivity : AppCompatActivity(), View.OnClickListener{
         rv_mypick.layoutManager = GridLayoutManager(this, 2)
 
 
-    }
 
-    override fun onClick(v: View?) {
-        when(v){
-            //editmode 전환
-            btn_mypick_editmode -> {
-                //체크박스와 휴지통이미지 visibility
-                btn_mypick_editmode_delete.visibility
-                btn_mypick_editmode_unchecked.visibility
-            }
 
-        }
 
     }
+
+
 }
